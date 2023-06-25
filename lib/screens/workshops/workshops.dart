@@ -9,24 +9,37 @@ class workshops extends StatefulWidget
 
 class _workshopsState extends State<workshops> {
   List <String> image_comp=[
-    "assets/images/chess.png",
-    "assets/images/fif.png",
-    "assets/images/codes.png",
+    "assets/images/aia.png",
+    "assets/images/nano.jpg",
+    "assets/images/augmented.png",
+    "assets/images/cloud.png",
+    "assets/images/iot.png",
+    "assets/images/photography.png",
+
 
 
   ];
 
   List <String> description_events=[
-    "Experience the ultimate chess showdown at our university's highly-anticipated tournament! Prepare to witness fierce battles and brilliant strategic moves as players from our campus compete for glory. Whether you're a seasoned chess enthusiast or simply curious to delve into the captivating world of chess, this event promises excitement and intellectual stimulation. Join us for an unforgettable display of skill, determination, and strategic brilliance at our university's chess tournament.",
-    "Experience the thrill of virtual soccer at our university's FIFA gaming tournament! Join us for a competitive showdown where gaming enthusiasts showcase their skills on the digital pitch. Whether you're a seasoned FIFA player or a passionate fan, this event promises excitement and intense gameplay. Compete against fellow students and immerse yourself in the world of virtual soccer at our university's thrilling FIFA gaming tournament.",
-    "Get ready for the ultimate coding competition at our university! Join us for a thrilling showcase of programming skills and innovation. Whether you're a seasoned coder or a budding enthusiast, this event offers an exciting opportunity to test your abilities and solve challenging problems. Don't miss out on the chance to showcase your expertise and compete with fellow coding enthusiasts at our university's prestigious coding competition."
+
+
+    "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
+    "Immerse yourself in the fascinating world of nanotechnology at our university's enlightening workshop! Join us for an engaging showcase of cutting-edge scientific advancements and innovation. Whether you're a science enthusiast or simply curious about the wonders of nanotechnology, this workshop offers an exciting opportunity to delve into this rapidly evolving field. Discover the potential applications, explore nanomaterials, and learn about the future of nanotechnology. Don't miss out on the chance to be part of our university's prestigious nanotechnology workshop, where knowledge and innovation converge to shape the future of science.",
+    "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
+    "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
+    "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
+    "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
   ];
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
+    String hexColor = "#fde582";
+    Color color = Color(int.parse(hexColor.substring(1, 7), radix: 16) + 0xFF000000);
     return Scaffold(
       appBar: AppBar(
+
+        title: Text("UNLOCK ",style: TextStyle(color:color,fontSize: 20,fontWeight: FontWeight.bold ),),
         backgroundColor: Colors.black,
       ),
       backgroundColor: Colors.black,
@@ -45,9 +58,11 @@ class _workshopsState extends State<workshops> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container
                   (
-                  color: Colors.blue,
+                  
 
-                  child: Image.asset(image_comp[index],fit: BoxFit.cover,),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(11),
+                      child: Image.asset(image_comp[index],fit: BoxFit.cover,)),
                 ),
               ),
             ),

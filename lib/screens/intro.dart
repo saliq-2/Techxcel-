@@ -1,11 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:techxcel/screens/competitions.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:techxcel/screens/fun_actitvities/fun_activities.dart';
+import 'package:techxcel/screens/gaming/gaming.dart';
 import 'package:techxcel/screens/grid_description/grid_description.dart';
+import 'package:techxcel/screens/workshops/workshops.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -48,7 +52,9 @@ class _introState extends State<intro> {
     "assets/images/codes.png",
     "assets/images/cs.png",
     "assets/images/treasure.png",
-    "assets/images/quiz.png"];
+    "assets/images/quiz.png",
+
+  ];
 
   List<String> grid_itrms_description=[
     "Immerse yourself in the world of Artificial Intelligence at our university's exciting AI competition! Join us for a captivating showcase of cutting-edge technologies and innovative AI solutions. Whether you're an AI expert or just starting to explore this fascinating field, this event offers a thrilling platform to showcase your skills and push the boundaries of AI. Don't miss the opportunity to be part of our university's prestigious AI competition, where creativity and intelligence converge to shape the future.",
@@ -97,12 +103,12 @@ class _introState extends State<intro> {
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("FAQ'S",style: TextStyle(color: color,fontSize: 20,fontWeight: FontWeight.bold),),
+              child: InkWell(child: Text("FAQ'S",style: TextStyle(color: color,fontSize: 20,fontWeight: FontWeight.bold),)),
             ),
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("About us",style: TextStyle(color: color,fontSize: 20,fontWeight: FontWeight.bold),),
+              child: InkWell(child: Text("About us",style: TextStyle(color: color,fontSize: 20,fontWeight: FontWeight.bold),)),
             ),
           ],
         ),
@@ -224,14 +230,25 @@ class _introState extends State<intro> {
 
                   }, child: Text("All",style: TextStyle(color: event_color),)),
               TextButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>competitions()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=>competitions()));
+                Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: competitions()));
               }, child: Text("Competitions",style: TextStyle(color: event_color),)),
+
+
+
+
+
                   TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>gaming()));
 
 
                   }, child: Text("Gaming",style: TextStyle(color: event_color),)),
-                  TextButton(onPressed: (){}, child: Text("Fun Activities",style: TextStyle(color: event_color),)),
-                  TextButton(onPressed: (){}, child: Text("WorkShops",style: TextStyle(color: event_color),)),
+                  TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>fun_activities()));
+                  }, child: Text("Fun Activities",style: TextStyle(color: event_color),)),
+                  TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>workshops()));
+                  }, child: Text("WorkShops",style: TextStyle(color: event_color),)),
                     // const Padding(padding: EdgeInsets.all(16.0)
                     // ),
                     // FutureBuilder<void>(future: _launched, builder: _launchStatus), ),
